@@ -3,6 +3,7 @@ package system;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  * @author emsi
@@ -30,16 +31,24 @@ public class Client {
 	}
 
 
-	public void afficherClient(){
-		logger.info(" nom du client:"+getNomClient());
-		logger.info("le nom du client:"+getNomClient());
-		logger.info("le pr nom du client:"+getPrenomClient());
-		logger.info("------- Les comptes bancaires associ s : --------");
-		for(int i = 0; i< mCompte.size(); i++){
-			if (mCompte.get(i)!=null) {
-				logger.info(mCompte.get(i).toString());
+	public void afficherClient() {
+
+		if (logger.isLoggable(Level.INFO)) {
+
+			logger.info("nom du client: " + nomClient);
+			logger.info("prenom du client: " + prenomClient);
+			logger.info("------- Les comptes bancaires associés : --------");
+
+			for (int i = 0; i < mCompte.size(); i++) {
+				Compte compte = mCompte.get(i);
+				if (compte != null) {
+					// invoke toString() only if logging enabled
+					logger.info(compte.toString());
+				}
 			}
-	}}
+		}
+	}
+
 
 	public String getNomClient(){
 		return nomClient;
