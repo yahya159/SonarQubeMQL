@@ -1,4 +1,4 @@
-package System;
+package system;
 
 import java.util.Date;
 
@@ -30,7 +30,7 @@ public class Compte {
 
 	@Override
 	public String toString() {
-		return "Compte crée le " + DateCreation + ", NumCompte=" + NumCompte + ", Solde=" + Solde + "]";
+		return "Compte crï¿½e le " + DateCreation + ", NumCompte=" + NumCompte + ", Solde=" + Solde + "]";
 	}
 
 
